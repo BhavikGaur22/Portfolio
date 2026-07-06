@@ -1,9 +1,10 @@
-var typed=new Typed("#text", { 
-strings: ["Data Engineer","Data Scientist","AI Engineer"],
-typeSpeed:50,
-backSpeed:50,
-backDelay: 2000,
-loop:true
+
+var typed = new Typed("#text", {
+    strings: ["BHAVIK TEST"],
+    typeSpeed: 50,
+    backSpeed: 50,
+    backDelay: 2000,
+    loop: true
 });
 
 // Select the About link in the navigation
