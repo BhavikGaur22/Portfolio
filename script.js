@@ -1,10 +1,12 @@
 
-consol**log("SCRIPT LOADED");
+window.onload = function () {
 
-var typed **new Typed("#text", {
-    strings**["BHAVIK TEST"],
-    typeSpeed: 5**
-    backSpeed: 50,
-    backDelay**2000,
-    loop: true
-});
+    new Typed("#text", {
+        strings: ["Data Engineer", "Data Scientist", "AI Engineer"],
+        typeSpeed: 50,
+        backSpeed: 50,
+        backDelay: 2000,
+        loop: true
+    });
+
+};
