@@ -1,5 +1,9 @@
 
-window.onload = function () {
+console.log("SCRIPT LOADED");
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("DOM READY");
 
     new Typed("#text", {
         strings: ["Data Engineer", "Data Scientist", "AI Engineer"],
@@ -9,4 +13,4 @@ window.onload = function () {
         loop: true
     });
 
-};
+});
