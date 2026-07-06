@@ -1,4 +1,4 @@
-
+console.log("SCRIPT LOADED");
 var typed = new Typed("#text", {
     strings: ["BHAVIK TEST"],
     typeSpeed: 50,
