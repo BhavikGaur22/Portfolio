@@ -6,6 +6,7 @@
     <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="mediaquerries.css">
+    <link rel="stylesheet" href="analytics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
    <!-- Google tag (gtag.js) -->
@@ -16,6 +17,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-JF31T9QNB7');
+</script>
+
+<!-- Microsoft Clarity (heatmaps + session recordings) -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xjllf1mynh");
 </script>
 </head>
 <body>
@@ -49,10 +59,9 @@
 
         </p>
         <div class="home-sci">
-           <a href="#"style="--i:6;"><i class="fa-brands fa-github"></i></a>
-           <a href="#"style="--i:7;"><i class="fa-brands fa-twitter"></i></a>
-           <a href="#"style="--i:8;"><i class="fa-brands fa-instagram"></i></a>
-           <a href="#"style="--i:9;"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="https://github.com/BhavikGaur22" target="_blank" rel="noopener" style="--i:6;"><i class="fa-brands fa-github"></i></a>
+           <a href="https://www.instagram.com/bhavik_gaur" target="_blank" rel="noopener" style="--i:7;"><i class="fa-brands fa-instagram"></i></a>
+           <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener" style="--i:8;"><i class="fa-brands fa-linkedin"></i></a>
         </div>
         <a href="assets/resume-example.pdf" download class="btn">Download CV</a>
         
@@ -261,18 +270,17 @@
                     </div>
                     
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                        <a href="#""><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#""><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/BhavikGaur22" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/bhavik_gaur" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                     <a href="assets/resume-example.pdf" download class="btn">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form action="#">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="text" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6"  placeholder="Your Message"></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6"  placeholder="Your Message"></textarea>
                         <button type="submit" class="btn1 btn2">Submit</button>
 
                     </form>
@@ -286,5 +294,6 @@
 </div>
 <a href="#home" class="top"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
     <script src="script.js"> </script>
+    <script src="analytics.js"></script>
 </body>
 </html>

@@ -1,2 +1,107 @@
-/*---------------css for small screen---------------*/
+/*---------------Responsive styles---------------*/
 
+/* Large laptops / small desktops */
+@media (max-width: 1200px) {
+    html { font-size: 55%; }
+    .home-img img { width: 32vw; }
+}
+
+/* Tablets landscape */
+@media (max-width: 991px) {
+    .header { padding: 2rem 4%; }
+    section { padding: 10rem 4% 2rem; }
+    .about { gap: 4rem; }
+    .home-img img { width: 40vw; }
+    .about-img img { width: 45vw; }
+    .contact { padding-left: 0; }
+}
+
+/* Tablets portrait -> enable hamburger menu */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(255, 255, 255, .15);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
+        display: none;
+        flex-direction: column;
+    }
+    .navbar.open { display: flex; }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 1.5rem 0;
+        opacity: 1;          /* override entry animation */
+        animation: none;
+    }
+    .navbar a.active::after { display: none; }
+
+    /* Home: stack text above image */
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 12rem;
+        gap: 2rem;
+    }
+    .home-content h2 { font-size: 4.5rem; }
+    .home-content h3 { font-size: 2.6rem; }
+    .home-sci { justify-content: center; display: flex; }
+    .home-img img { width: 60vw; max-width: 320px; }
+
+    /* About: stack */
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .about-img img {
+        width: 60vw;
+        max-width: 320px;
+        padding: 2rem 0 0;
+    }
+    .about-content h2 { text-align: center; }
+
+    /* Projects */
+    .main-text h2 { font-size: 4rem; margin-bottom: 5rem; }
+    .portfolio-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2rem;
+    }
+    .row img, .row:hover .layer, .layer { width: 100%; }
+
+    /* Contact: single column */
+    .contact {
+        grid-template-columns: 1fr;
+        margin-top: 8rem;
+        gap: 1rem;
+    }
+    .contact-left h2 { font-size: 4.5rem; margin-bottom: 3rem; }
+    .contact-right form { margin-top: 3rem; }
+    .contact-right form input,
+    .contact-right form textarea { width: 100%; }
+}
+
+/* Phones */
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+    .header { padding: 2rem 4%; }
+    .home-content h2 { font-size: 3.6rem; }
+    .home-img img { width: 75vw; }
+    .about-img img { width: 75vw; }
+    .main-text h2 { font-size: 3.2rem; }
+    .contact-left h2 { font-size: 3.6rem; }
+
+    /* CV email-gate modal fits small screens */
+    .pf-modal { padding: 1.5rem; }
+}
