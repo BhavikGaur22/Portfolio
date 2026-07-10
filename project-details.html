@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Portfolio</title>
+    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="mediaquerries.css?v=11">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .pd-wrapper{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12rem 9% 6rem;
+            gap: 2rem;
+        }
+        .pd-tag{
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgb(160, 160, 160);
+        }
+        .pd-wrapper h1{
+            font-size: 5rem;
+            line-height: 1.2;
+        }
+        .pd-wrapper h1 span{ color: beige; }
+        .pd-wrapper p{
+            font-size: 1.8rem;
+            color: rgb(180, 180, 180);
+            max-width: 60rem;
+            line-height: 1.7;
+        }
+        .pd-badge{
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            color: rgb(200, 200, 200);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 40px;
+            padding: 0.8rem 2rem;
+        }
+        .pd-back{
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        /* keep nav as inline links on this standalone page (no hamburger/JS here) */
+        @media (max-width: 992px){
+            .navbar{
+                position: static;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                width: auto;
+                padding: 0;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+            }
+            .navbar a{ margin: 0 0 0 1.5rem; font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html#home" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skill</a>
+            <a href="index.html#project">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="pd-wrapper">
+        <span class="pd-tag" id="pd-tag">Project</span>
+        <h1 id="pd-title">Project Details</h1>
+        <span class="pd-badge"><i class="fa-solid fa-wrench"></i> Full case study coming soon</span>
+        <p id="pd-desc">A detailed write-up — overview, tech stack, architecture and outcomes —
+            will be added here soon.</p>
+        <a href="index.html#project" class="btn pd-back"><i class="fa-solid fa-arrow-left"></i> Back to projects</a>
+    </main>
+
+    <script>
+        (function () {
+            var projects = {
+                "1": {
+                    tag: "Generative AI",
+                    title: "AI Technical Assistant",
+                    desc: "A Retrieval-Augmented Generation (RAG) assistant for a commodity-trading platform, built on Azure OpenAI and Azure AI Search. It grounds GPT-4o responses in enterprise documentation, release notes and troubleshooting guides to give support teams accurate, context-aware answers."
+                },
+                "2": {
+                    tag: "Data Engineering",
+                    title: "Cloud Data Migration",
+                    desc: "Migration of 20+ data workflows from an on-prem Oracle EDW to Azure, rebuilt as modular Databricks + PySpark + Delta Lake pipelines on ADLS Gen2 using a Medallion architecture — enabling faster, cleaner and more traceable analytics."
+                },
+                "3": {
+                    tag: "Data Analytics",
+                    title: "Inside Airbnb Analytics",
+                    desc: "Analytical dashboards and KPI reporting on Airbnb listings across multiple markets for a non-profit, using exploratory data analysis and benchmarking to surface pricing opportunities and performance trends."
+                }
+            };
+            var params = new URLSearchParams(window.location.search);
+            var id = params.get('id');
+            var p = projects[id];
+            if (p) {
+                document.getElementById('pd-tag').textContent = p.tag;
+                document.getElementById('pd-title').textContent = p.title;
+                document.getElementById('pd-desc').textContent = p.desc;
+                document.title = p.title + ' | Bhavik Gaur';
+            }
+        })();
+    </script>
+</body>
+</html>

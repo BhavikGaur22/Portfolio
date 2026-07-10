@@ -25,6 +25,7 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
 }
 body
 {
@@ -34,9 +35,8 @@ body
 }
 
 section{
-    min-height: 80vh;
-    padding: 10rem 9% 2rem;
-
+    min-height: 100vh;
+    padding: 10rem 9% 5rem;
 }
 
 .header
@@ -99,8 +99,8 @@ section{
 }
 
 .home{
- 
-    padding-top: 120px;
+    min-height: 100vh;
+    padding-top: 12rem;
     justify-content: space-around;
     display: flex;
     align-items: center;
@@ -155,6 +155,24 @@ section{
     animation-delay: .5s;
 }
 
+.current-role{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    color: rgb(200, 200, 200);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    padding: 0.7rem 1.6rem;
+    width: fit-content;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .7s;
+}
+.current-role i{ color: rgb(255, 255, 255); }
+.current-role strong{ color: rgb(255, 255, 255); font-weight: 600; }
+
 .home-sci a{
     display: inline-flex;
     justify-content: center;
@@ -206,8 +224,9 @@ background: rgb(141, 124, 124);
 
 .about{
 display: flex;
-gap: 15rem;
-align-items: center;
+flex-direction: row;
+gap: 8rem;
+align-items: flex-start;
 justify-content: center;
 background: var(--bg-color);
 
@@ -215,9 +234,6 @@ background: var(--bg-color);
 
 }
 .about-img img{
-padding-bottom: 20%;
-padding-top: 20%;
-padding-left: 20%;
 max-width: 430px;
 height: auto;
 width:35vw;
@@ -380,15 +396,90 @@ width:35vw;
 
 }
 */
+.about-more{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+.about-more.open{
+    max-height: 60rem;
+}
+.about-more p{
+    margin-top: 1.5rem;
+}
+#read-more-btn{
+    cursor: pointer;
+    margin-top: 2.5rem;
+}
+
+/* SKILLS SECTION */
+#skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.skills-wrapper{
+    width: 100%;
+    text-align: center;
+}
+.skills-subtitle{
+    color: rgb(180, 180, 180);
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+.skill-card{
+    background: rgb(18, 18, 18);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 3rem 2.5rem;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.skill-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+.skill-card i{
+    font-size: 4rem;
+    color: beige;
+    margin-bottom: 1.5rem;
+}
+.skill-card h3{
+    font-size: 2.1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.skill-card p{
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: rgb(175, 175, 175);
+}
+
+#project{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.project{
+    width: 100%;
+}
 .main-text{
-    padding-top: 50px;
-    margin-top: 100px;
+    padding-top: 0;
+    margin-top: 0;
+    width: 100%;
 }
 .main-text h2{
     font-size: 60px;
     line-height: 1;
     text-align: center;
-    margin-bottom: 13rem;
+    margin-bottom: 5rem;
 }
 
 .main-text h2 span
@@ -398,10 +489,12 @@ width:35vw;
 }
 .portfolio-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .row{
+    display: block;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -410,7 +503,7 @@ width:35vw;
 }
 .row img{
  
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -419,7 +512,7 @@ width:35vw;
         
 }
 .layer{
-    width: 80%;
+    width: 100%;
     height: 0;
     background: linear-gradient(rgba(0,0,0,0.1),rgb(253, 0, 0));
     position: absolute;
@@ -467,7 +560,7 @@ border-radius: 50%;
 }
 .row:hover .layer{
     height: 100%;
-    width: 80%;
+    width: 100%;
     transform: scale(1.1);
    
 }
@@ -520,9 +613,12 @@ border-radius: 50%;
   .last-text p{
     width: 100%;
     text-align: center;
-    padding: 25px 0;
+    padding: 2.5rem 0;
     background: var(--bg-color);
-    margin-top: 70px;
+    color: rgb(170, 170, 170);
+    font-size: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 3rem;
   }
 
   .top{
@@ -549,17 +645,16 @@ border-radius: 50%;
   .contact{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    align-items: center;
+    align-items: start;
+    align-content: start;
     gap: 3rem;
-    padding-left: 30px;
-    margin-top: 100px;
 
   }
   .contact-left h2{
     font-size: 70px;
     line-height: 1;
-    text-align: center;
-    margin-bottom: 10rem;
+    text-align: left;
+    margin-bottom: 2rem;
 
   }
 
@@ -584,25 +679,24 @@ border-radius: 50%;
     margin-bottom: 3rem;
   }
 .contact-list li{
-    margin-bottom: 10px;
-    display: block;
-}
-.contact-list li{
-    margin-bottom: 10px;
-    display: block;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
  .contact-list i{
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    width: 22px;
     color: rgb(253, 253, 253);
     font-size: 20px;
     font-weight: 600;
-    transition: all .40 ease;
+    transition: all .4s ease;
  }
  .contact-list li span{
-    padding-left: 5px;
     color: rgb(253, 253, 253);
-    font-size: 15px;
+    font-size: 16px;
  }
 
  .contact-list li i:hover{
@@ -612,15 +706,20 @@ border-radius: 50%;
  
 
   .social-icons{
-    margin-top: 30px;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  .contact-left .btn{
+    margin-top: 2.5rem;
   }
 
   .social-icons a{
     text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
+    font-size: 28px;
     color: white;
-    display: inline-block;
+    display: inline-flex;
     transition: transform 0.5s;
   }
   .social-icons a:hover{
@@ -648,15 +747,16 @@ border-radius: 50%;
   }
   .contact-right form{
     position: relative;
-    margin-top: 13rem;
+    margin-top: 0;
 
   }
 
-  .contact-right form input,form textarea{
+  .contact-right form input,
+  .contact-right form textarea{
 
     border: none;
     outline: none;
-    width: 90%;
+    width: 100%;
     padding: 18px;
     background: rgb(255, 253, 253);
     color: rgb(15, 15, 15);

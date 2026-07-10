@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="mediaquerries.css">
-    <link rel="stylesheet" href="analytics.css">
+    <title>Bhavik Gaur | AI &amp; Data Engineer</title>
+    <meta name="description" content="Bhavik Gaur - AI &amp; Data Engineer building Generative AI and cloud data platforms on Azure. RAG, Databricks, PySpark, Delta Lake.">
+  <link rel="stylesheet" href="style.css?v=11"> 
+    <link rel="stylesheet" href="mediaquerries.css?v=11">
+    <link rel="stylesheet" href="analytics.css?v=11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
    <!-- Google tag (gtag.js) -->
@@ -38,9 +39,9 @@
         <nav class="navbar">
             <a href="#home" style="--i:1;" class="active">Home</a>
             <a href="#about" style="--i:2;">About</a>
-            <a href="#"style="--i:3;">Skill</a>
-            <a href="#project"style="--i:4;">Projects</a>
-            <a href="#contact"style="--i:5;">Contact</a>
+            <a href="#skills" style="--i:3;">Skill</a>
+            <a href="#project" style="--i:4;">Projects</a>
+            <a href="#contact" style="--i:5;">Contact</a>
         </nav>
     </header>
 
@@ -52,18 +53,18 @@
     <div class="home-content">
         <h3>Hello, It's Me</h3>
         <h2>Bhavik Gaur</h2>
-        <h3>And I'm <span id="text"></span></h3>
-        <p>I'm a Data Enthusiast with 5 year of experinece in BFSI Domain
-            <br>expertise in buikding scalable data pipelines, machine learning models, and 
-            <br>analytics systems, currently pusrsing M.Sc. in Data Science and AI. 
-
+        <h3>And I'm a <span id="text"></span></h3>
+        <p>I build production Generative AI and cloud data platforms on Azure &mdash;
+            <br>from RAG assistants to scalable data pipelines that turn raw data into decisions.
+            <br>Currently an AI Engineer in Dubai, pursuing an M.Sc. in Data Science &amp; AI.
         </p>
+        <p class="current-role"><i class="fa-solid fa-briefcase"></i> Currently <strong>@ Amphora</strong> &nbsp;&middot;&nbsp; ex-<strong>TCS</strong></p>
         <div class="home-sci">
            <a href="https://github.com/BhavikGaur22" target="_blank" rel="noopener" style="--i:6;"><i class="fa-brands fa-github"></i></a>
-           <a href="https://www.instagram.com/bhavik_gaur" target="_blank" rel="noopener" style="--i:7;"><i class="fa-brands fa-instagram"></i></a>
-           <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener" style="--i:8;"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener" style="--i:7;"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="mailto:Bhavikgaur826@gmail.com" style="--i:8;"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <a href="assets/Bhavik_Resume_AI_Engineer.pdf" download class="btn">Download CV</a>
+        <a href="assets/Bhavik_Gaur_Resume.pdf" download class="btn">Download CV</a>
         
 
     </div>
@@ -80,17 +81,63 @@
            </div>
                 <div class="about-content">
                     <h2 class="heading">ABOUT <span>Me</span></h2>
-                    <h3>Frontend Developer</h3>
-                    <p>I am a skilled web designer with over 3 years exprience Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                        Sit soluta sapiente ea ratione in deleniti cum necessitatibus, fugiat nobis temporibus blanditiis, odio voluptate non, 
-                        tenetur eius possimus commodi vel? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deserunt 
-                        mollitia dolore at soluta repudiandae, eius autem, eligendi, illo asperiores nam. 
-                        Sequi in nulla quas impedit reiciendis quam quibusdam harum. </p>
-                        <a href="#" class="btn">Read more</a>
+                    <h3>AI &amp; Data Engineer</h3>
+                    <p>I'm an engineer with 4+ years of experience turning messy, large-scale data into
+                        reliable platforms and, more recently, into Generative AI products people actually use.
+                        My focus is shipping things that work in production &mdash; not just prototypes.</p>
+                    <div class="about-more" id="about-more">
+                        <p>Today I build RAG assistants and AI workflows on Azure (Azure OpenAI, AI Foundry,
+                            AI Search), backed by years of engineering scalable ETL pipelines and lakehouses
+                            with Databricks, PySpark and Delta Lake. I've led a 20+ workflow migration from
+                            on-prem Oracle to the cloud and secured multi-tenant AI services with Entra ID and RBAC.</p>
+                        <p>I'm currently pursuing an M.Sc. in Data Science &amp; AI in Dubai, and I care about
+                            clarity, measurable impact, and clean systems that other engineers enjoy working with.</p>
+                    </div>
+                    <button type="button" class="btn" id="read-more-btn" aria-expanded="false" aria-controls="about-more">Read more</button>
 
                 </div>
 
 
+</section>
+
+<!-- SKILLS SECTION DESIGN -->
+<section id="skills">
+    <div class="skills-wrapper">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <p class="skills-subtitle">How I turn data and models into working products</p>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>Generative AI</h3>
+                <p>RAG pipelines, semantic search, and tool-calling with Azure OpenAI, AI Foundry &amp; AI Search.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h3>Data Engineering</h3>
+                <p>Scalable ETL and lakehouses with Databricks, PySpark, Delta Lake and ADLS Gen2.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-microsoft"></i>
+                <h3>Azure Cloud</h3>
+                <p>Cloud data platforms, migrations, and secure services with Entra ID and RBAC.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Machine Learning</h3>
+                <p>Feature engineering, modeling, and embeddings for search and prediction.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Programming</h3>
+                <p>Python, SQL and PySpark for clean, testable, production-grade data code.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Data Visualization</h3>
+                <p>Clear dashboards and KPI reporting with Power BI and Matplotlib.</p>
+            </div>
+        </div>
+    </div>
 </section>
 <!--
 <h1 class="sub-title">My<span>Skills</span></h1>
@@ -220,37 +267,34 @@
 <section id="project">
     <div class="project">
         <div class="main-text">
-            <h2>Latest <span>Project</span></h2>
+            <h2>Featured <span>Projects</span></h2>
             <div class="portfolio-content">
-                <div class="row">
-                    <img src="assets/project-1.png" alt="">
+                <a href="project-details.html?id=1" class="row">
+                    <img src="assets/project-1.png" alt="AI technical assistant project">
                     <div class="layer">
-                        <h5>U/UX Design</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis doloribus qui fugiat, quisquam excepturi voluptate hic. Eaque illo laborum quia, architecto iure
-                             beatae consectetur voluptatum perspiciatis consequatur totam molestias?</p>
-                             <a href="#"><i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(8, 8, 8);"></i></a>
+                        <h5>AI Technical Assistant</h5>
+                        <p>A RAG assistant for a commodity-trading platform, built on Azure OpenAI and AI Search &mdash; giving support teams accurate, grounded answers from enterprise docs.</p>
+                             <i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(8, 8, 8);"></i>
                     </div>
-                </div>
+                </a>
 
-                <div class="row">
-                    <img src="assets/project-2.png" alt="">
+                <a href="project-details.html?id=2" class="row">
+                    <img src="assets/project-2.png" alt="Cloud data migration project">
                     <div class="layer">
-                        <h5>U/UX Design</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis doloribus qui fugiat, quisquam excepturi voluptate hic. Eaque illo laborum quia, architecto iure
-                             beatae consectetur voluptatum perspiciatis consequatur totam molestias?</p>
-                             <a href="#"><i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(7, 7, 7);"></i></a>
+                        <h5>Cloud Data Migration</h5>
+                        <p>Migrated 20+ data workflows from on-prem Oracle to Azure, rebuilding them as modular Databricks + Delta Lake pipelines for faster, cleaner analytics.</p>
+                             <i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(7, 7, 7);"></i>
                     </div>
-                </div>
+                </a>
 
-                <div class="row">
-                    <img src="assets/project-3.png" alt="">
+                <a href="project-details.html?id=3" class="row">
+                    <img src="assets/project-3.png" alt="Inside Airbnb analytics project">
                     <div class="layer">
-                        <h5>U/UX Design</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis doloribus qui fugiat, quisquam excepturi voluptate hic. Eaque illo laborum quia, architecto iure
-                             beatae consectetur voluptatum perspiciatis consequatur totam molestias?</p>
-                             <a href="#"><i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(10, 10, 10);"></i></a>
+                        <h5>Inside Airbnb Analytics</h5>
+                        <p>Dashboards and KPI analysis of Airbnb listings across markets, surfacing pricing opportunities and performance trends for a non-profit.</p>
+                             <i class='fa-solid fa-arrow-up-right-from-square' style="color: rgb(10, 10, 10);"></i>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -262,19 +306,21 @@
          
                 <div class="contact-left">
                     <h2>Contact <span>Me</span></h2>
-                    <h4>Lets work Together</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusamus similique deleniti nisi dolorum reprehenderit? Minus deleniti voluptatibus ex facere voluptas. Error, aliquid reiciendis veniam itaque earum impedit non explicabo.</p>
+                    <h4>Let's build something</h4>
+                    <p>Open to AI Engineer and Data Engineer roles, and happy to talk about
+                        Generative AI, data platforms, or a problem you're trying to solve.</p>
                     <div class="contact-list">
-                        <li><i class="fa-solid fa-paper-plane"></i><span>bhavikgaur22@example.com</span></li>
-                        <li><i class="fa-solid fa-square-phone"></i><span>8130171657</span></li>
+                        <li><i class="fa-solid fa-paper-plane"></i><span>Bhavikgaur826@gmail.com</span></li>
+                        <li><i class="fa-solid fa-square-phone"></i><span>+971 54 435 7281</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i><span>Dubai, UAE</span></li>
                     </div>
                     
                     <div class="social-icons">
-                        <a href="https://github.com/BhavikGaur22" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.instagram.com/bhavik_gaur" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/BhavikGaur22" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bhavik-gaur-20ab09165/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="mailto:Bhavikgaur826@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                     </div>
-                    <a href="assets/Bhavik_Resume_AI_Engineer.pdf" download class="btn">Download CV</a>
+                    <a href="assets/Bhavik_Gaur_Resume.pdf" download class="btn">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form action="#">
@@ -290,10 +336,10 @@
 </section>
 
 <div class="last-text">
-    <p>Developed by Bhavik Gaur @ 2026</p>
+    <p>Designed &amp; built by Bhavik Gaur &copy; 2026</p>
 </div>
 <a href="#home" class="top"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
-    <script src="script.js"> </script>
-    <script src="analytics.js"></script>
+    <script src="script.js?v=11"> </script>
+    <script src="analytics.js?v=11"></script>
 </body>
 </html>

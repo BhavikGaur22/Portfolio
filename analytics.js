@@ -20,7 +20,7 @@
   var FORMSPREE_ID = "meebbknp";
 
   // Sections to measure engagement for (must match element ids in index.html)
-  var SECTIONS = ["home", "about", "project", "contact"];
+  var SECTIONS = ["home", "about", "skills", "project", "contact"];
   // ========================================================================
 
   var FORMSPREE_URL = "https://formspree.io/f/" + FORMSPREE_ID;
@@ -32,6 +32,19 @@
         window.gtag("event", eventName, params || {});
       }
     } catch (e) { /* never let analytics break the page */ }
+  }
+
+  // --- Microsoft Clarity helpers (safe if Clarity isn't loaded) -----------
+  function clarityEvent(name) {
+    try { if (typeof window.clarity === "function") window.clarity("event", name); } catch (e) {}
+  }
+  function clarityTag(name, value) {
+    try { if (typeof window.clarity === "function") window.clarity("set", name, String(value)); } catch (e) {}
+  }
+  // Fire an interaction to BOTH GA4 and Microsoft Clarity in one call.
+  function interaction(name, params) {
+    track(name, params);
+    clarityEvent(name);
   }
 
   // ============================ 1. PAGEVIEW CONTEXT =======================
@@ -144,7 +157,8 @@
     var link = e.target.closest && e.target.closest('a[download], a[href$=".pdf"]');
     if (!link) return;
 
-    track("cv_download_click", { href: link.getAttribute("href") });
+    interaction("cv_download_click", { href: link.getAttribute("href") });
+    clarityTag("cv_download", "clicked");
 
     // If they've already given details, just let it download.
     if (isUnlocked() || FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
@@ -210,7 +224,7 @@
     }).then(function (res) {
       if (res.ok) {
         localStorage.setItem(CV_UNLOCKED_KEY, "1");
-        track("cv_lead_captured", {}); // NOTE: no email sent to GA (PII policy)
+        interaction("cv_lead_captured", {}); // NOTE: no email sent to GA (PII policy)
         statusEl.textContent = "Thanks! Your download is starting...";
         if (pendingCvHref) doDownload(pendingCvHref);
         setTimeout(closeModal, 1200);
@@ -222,13 +236,44 @@
     });
   }
 
+  // ============= 4b. SOCIAL ICONS + PROJECT TILE CLICK TRACKING ===========
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a");
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+
+    // Project tiles -> project_open (GA4 + Clarity)
+    if (href.indexOf("project-details.html") !== -1) {
+      var idMatch = href.match(/id=(\w+)/);
+      var id = idMatch ? idMatch[1] : "";
+      var h5 = a.querySelector("h5");
+      var title = h5 ? h5.textContent.trim() : "";
+      interaction("project_open", { id: id, title: title });
+      clarityTag("project_open", title || id);
+      return;
+    }
+
+    // Social / outbound / email icons -> outbound_click (GA4 + Clarity)
+    var isExternal = /^https?:\/\//.test(href) && href.indexOf(location.host) === -1;
+    var isMail = href.indexOf("mailto:") === 0;
+    if (isExternal || isMail) {
+      var label = "external";
+      if (/github\.com/.test(href)) label = "github";
+      else if (/linkedin\.com/.test(href)) label = "linkedin";
+      else if (/instagram\.com/.test(href)) label = "instagram";
+      else if (isMail) label = "email";
+      interaction("outbound_click", { label: label, href: href });
+      clarityTag("outbound_click", label);
+    }
+  });
+
   // ==================== 5. CONTACT FORM -> Formspree ======================
   function wireContactForm() {
     var contactForm = document.querySelector(".contact-right form");
     if (!contactForm) return;
 
     contactForm.addEventListener("submit", function (e) {
-      track("contact_submit", {});
+      interaction("contact_submit", {});
       if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") return; // not configured -> default behavior
       e.preventDefault();
 
