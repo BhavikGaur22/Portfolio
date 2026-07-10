@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     new Typed("#text", {
-        strings: ["AI Engineer", "Data Engineer", "Data Scientist"],
+        strings: ["an AI Engineer", "a Data Engineer", "a Data Scientist"],
         typeSpeed: 150,
         backSpeed: 50,
         backDelay: 2000,
