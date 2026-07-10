@@ -235,10 +235,10 @@ background: var(--bg-color);
 }
 .about-img img{
 max-width: 430px;
+width: 35vw;
 height: auto;
-width:35vw;
-
-
+object-fit: contain;
+border-radius: 12px;
 }
 .heading{
     text-align: center;
@@ -502,19 +502,17 @@ width:35vw;
     
 }
 .row img{
- 
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
-    
-   
-        
 }
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.1),rgb(253, 0, 0));
+    background: linear-gradient(to top, rgba(10, 8, 8, 0.96) 0%, rgba(20, 18, 18, 0.92) 45%, rgba(30, 26, 26, 0.7) 100%);
     position: absolute;
     border-radius: 10px;
     left: 0;
@@ -527,31 +525,34 @@ width:35vw;
     text-align: center;
     padding: 0 40px;
     transition: height 0.5s;
-
 }
-layer h5{
-    color: rgb(247, 247, 247);
-    font-size: 20px;
-    font-weight: 600;
+.layer h5{
+    color: #f5f2ec;
+    font-size: 1.8rem;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 .layer p{
-    color: black;
+    color: rgb(210, 210, 210);
     font-size: 1.3rem;
     line-height: 1.8;
 }
 .layer i{
-    color: red;
-    margin-top: 20px;
+    color: rgb(20, 18, 18);
+    margin-top: 24px;
     font-size: 20px;
-    background: rgb(194, 194, 194);
+    background: rgb(201, 189, 184);
     width: 60px;
     height: 60px;
     display: flex;
-
-align-items: center;
-justify-content: center;
-border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.row:hover .layer i:hover{
+    background: #f5f2ec;
+    transform: scale(1.08);
 }
 
 .row:hover img{
