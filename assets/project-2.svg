@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="Cloud Data Migration - Oracle to Azure pipelines">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141414"/>
+      <stop offset="1" stop-color="#232020"/>
+    </linearGradient>
+    <linearGradient id="ac2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9bdb8"/>
+      <stop offset="1" stop-color="#8d7c7c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg2)"/>
+  <circle cx="230" cy="880" r="360" fill="#8d7c7c" opacity="0.08"/>
+  <text x="90" y="150" font-family="Nunito, Arial, sans-serif" font-size="34" letter-spacing="8" fill="#8d7c7c">ON-PREM  →  CLOUD</text>
+  <text x="90" y="235" font-family="Nunito, Arial, sans-serif" font-size="70" font-weight="800" fill="#f5f2ec">Cloud Data</text>
+  <text x="90" y="315" font-family="Nunito, Arial, sans-serif" font-size="70" font-weight="800" fill="#f5f2ec">Migration</text>
+
+  <!-- source DB (Oracle) -->
+  <g transform="translate(120,470)">
+    <ellipse cx="90" cy="40" rx="90" ry="32" fill="#8d7c7c"/>
+    <path d="M0 40 v170 a90 32 0 0 0 180 0 v-170" fill="#1c1919" stroke="#8d7c7c" stroke-width="3"/>
+    <ellipse cx="90" cy="40" rx="90" ry="32" fill="#2a2624" stroke="#8d7c7c" stroke-width="3"/>
+    <path d="M0 108 a90 32 0 0 0 180 0" fill="none" stroke="#8d7c7c" stroke-width="2" opacity="0.6"/>
+    <path d="M0 160 a90 32 0 0 0 180 0" fill="none" stroke="#8d7c7c" stroke-width="2" opacity="0.6"/>
+    <text x="90" y="300" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" fill="#c9bdb8">Oracle</text>
+  </g>
+
+  <!-- pipeline nodes -->
+  <g stroke="url(#ac2)" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M330 560 h130"/>
+    <path d="M560 560 h130"/>
+    <path d="M790 560 h110"/>
+  </g>
+  <g>
+    <circle cx="510" cy="560" r="34" fill="#232020" stroke="#c9bdb8" stroke-width="4"/>
+    <circle cx="740" cy="560" r="34" fill="#232020" stroke="#c9bdb8" stroke-width="4"/>
+    <path d="M500 560 l8 8 l14 -18" stroke="#c9bdb8" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M730 560 l8 8 l14 -18" stroke="#c9bdb8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- cloud (Azure) -->
+  <g transform="translate(820,470)">
+    <path d="M40 140 a58 58 0 0 1 110 -22 a46 46 0 0 1 20 90 h-150 a48 48 0 0 1 20 -68 Z" fill="url(#ac2)"/>
+    <text x="90" y="300" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" fill="#c9bdb8">Azure</text>
+  </g>
+
+  <!-- delta layers -->
+  <g transform="translate(120,840)">
+    <rect x="0" y="0" width="840" height="26" rx="13" fill="#3a3533"/>
+    <rect x="0" y="40" width="700" height="26" rx="13" fill="#4a4340"/>
+    <rect x="0" y="80" width="520" height="26" rx="13" fill="#8d7c7c"/>
+  </g>
+  <text x="90" y="1010" font-family="Nunito, Arial, sans-serif" font-size="30" fill="#8d7c7c">Databricks  ·  PySpark  ·  Delta Lake</text>
+</svg>
